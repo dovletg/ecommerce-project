@@ -19,6 +19,11 @@ public class Product {
     // 1.from product table from mysql
     private Long id;
 
+    // relationship here product to productCategory
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private ProductCategory category;
+
     @Column(name = "sku")
     private String sku;
 
