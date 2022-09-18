@@ -6,6 +6,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
 import { Routes, RouterModule } from '@angular/router';
+import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 
 const routes: Routes = [ //path to match. When path matches, create new instance of component
   {path: 'category/:id', component: ProductListComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [ //path to match. When path matches, create new instance
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductCategoryMenuComponent
   ],
   imports: [
     RouterModule.forRoot(routes), // routes comes from line 10 const routes:
