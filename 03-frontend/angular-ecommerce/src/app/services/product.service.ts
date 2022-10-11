@@ -9,7 +9,6 @@ import { ProductCategory } from '../common/product-category';
   providedIn: 'root'
 })
 export class ProductService {
-  
 
   private baseUrl = 'http://localhost:8080/api/products';
 
@@ -17,6 +16,14 @@ export class ProductService {
 
   // inject HttpClient
   constructor(private httpClient: HttpClient) { }
+
+  getProduct(theProductId: number): Observable<Product> {
+    
+    // need to build URL based on category id
+    const productUrl = `${this.baseUrl}/${theProductId}`;
+
+    return this.httpClient.get<Product>(productUrl);
+  }
 
   //new method map the JSON data from Spring data REST to Product array
   getProductList(theCategoryId: number): Observable<Product[]> {
